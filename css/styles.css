@@ -1,4 +1,7 @@
-html { scroll-behavior: smooth; }
+html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 72px;
+}
 
 .gradient-text {
     background: linear-gradient(135deg, #7dd3fc, #a78bfa, #6ee7b7);
