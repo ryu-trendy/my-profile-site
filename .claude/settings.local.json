@@ -1,0 +1,7 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(Get-ChildItem -Recurse \"C:\\\\workspace\\\\my-profile-site\" | Where-Object { !$_.PSIsContainer } | Select-Object FullName, Length | Format-Table -AutoSize)"
+    ]
+  }
+}

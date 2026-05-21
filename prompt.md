@@ -10,4 +10,8 @@
 HTML, CSS, JavaScript로 만들고 Tailwind CSS CDN을 사용해줘.
 모던하고 깔끔한 디자인으로 만들어줘.
 
+- HTML, CSS, JavaScript는 폴더를 나누어 관리한다.
+- Container 사이의 간격을 최소로 한다.
+- 최상위 컨데이터의
+
 먼저 어떻게 만들 건지 계획을 보여줘.
