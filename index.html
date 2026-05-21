@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Trendy Ryu | 데이터플랫폼 아키텍트 · 히말라야 트레커</title>
+    <title data-i18n="page-title">Trendy Ryu | 데이터플랫폼 아키텍트 · 히말라야 트레커</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
@@ -19,27 +19,31 @@
                 <i class="fas fa-mountain text-sky-400 text-base"></i> Trendy Ryu
             </a>
             <div class="hidden md:flex items-center gap-8 text-sm font-medium">
-                <a href="#about"    class="text-white/85 hover:text-sky-300   transition-colors">About</a>
-                <a href="#skills"   class="text-white/85 hover:text-violet-300 transition-colors">Skills</a>
-                <a href="#projects" class="text-white/85 hover:text-emerald-300 transition-colors">Projects</a>
-                <a href="#contact"  class="bg-sky-500 hover:bg-sky-400 text-white px-4 py-2 rounded-lg transition-colors shadow-lg shadow-sky-900/30">Contact</a>
+                <a href="#about"    class="text-white/85 hover:text-sky-300   transition-colors" data-i18n="nav-about">소개</a>
+                <a href="#skills"   class="text-white/85 hover:text-violet-300 transition-colors" data-i18n="nav-skills">기술</a>
+                <a href="#projects" class="text-white/85 hover:text-emerald-300 transition-colors" data-i18n="nav-projects">프로젝트</a>
+                <a href="#contact"  class="bg-sky-500 hover:bg-sky-400 text-white px-4 py-2 rounded-lg transition-colors shadow-lg shadow-sky-900/30" data-i18n="nav-contact">연락처</a>
+                <button id="lang-toggle" onclick="toggleLang()" class="lang-toggle-btn">KO</button>
             </div>
-            <button id="hamburger" class="md:hidden text-white focus:outline-none" aria-label="메뉴 열기">
-                <i class="fas fa-bars text-xl"></i>
-            </button>
+            <div class="flex items-center gap-3 md:hidden">
+                <button id="lang-toggle-mobile" onclick="toggleLang()" class="lang-toggle-btn">KO</button>
+                <button id="hamburger" class="text-white focus:outline-none" aria-label="메뉴 열기">
+                    <i class="fas fa-bars text-xl"></i>
+                </button>
+            </div>
         </div>
         <div id="mobile-menu" class="md:hidden bg-slate-900/97 border-t border-slate-700">
             <div class="flex flex-col px-6 py-5 gap-5 text-sm font-medium">
-                <a href="#about"    class="text-slate-300 hover:text-sky-400    transition-colors" onclick="closeMobileMenu()">About</a>
-                <a href="#skills"   class="text-slate-300 hover:text-violet-400  transition-colors" onclick="closeMobileMenu()">Skills</a>
-                <a href="#projects" class="text-slate-300 hover:text-emerald-400 transition-colors" onclick="closeMobileMenu()">Projects</a>
-                <a href="#contact"  class="text-slate-300 hover:text-sky-400    transition-colors" onclick="closeMobileMenu()">Contact</a>
+                <a href="#about"    class="text-slate-300 hover:text-sky-400    transition-colors" onclick="closeMobileMenu()" data-i18n="nav-about">소개</a>
+                <a href="#skills"   class="text-slate-300 hover:text-violet-400  transition-colors" onclick="closeMobileMenu()" data-i18n="nav-skills">기술</a>
+                <a href="#projects" class="text-slate-300 hover:text-emerald-400 transition-colors" onclick="closeMobileMenu()" data-i18n="nav-projects">프로젝트</a>
+                <a href="#contact"  class="text-slate-300 hover:text-sky-400    transition-colors" onclick="closeMobileMenu()" data-i18n="nav-contact">연락처</a>
             </div>
         </div>
     </nav>
 
     <!-- ══════════════════════════════════════
-         HERO  —  마차푸차레 야경
+         HERO
     ══════════════════════════════════════ -->
     <section id="hero" class="relative min-h-screen flex items-center justify-center overflow-hidden">
 
@@ -53,26 +57,20 @@
 
         <!-- ── Hero text overlay ── -->
         <div class="relative z-10 max-w-4xl mx-auto text-center px-6 pt-24">
-            <p class="text-sky-300 text-xs font-semibold tracking-[0.38em] uppercase mb-5 fade-in">
-                데이터플랫폼 아키텍트 &nbsp;·&nbsp; 히말라야 트레커
-            </p>
+            <p class="text-sky-300 text-xs font-semibold tracking-[0.38em] uppercase mb-5 fade-in"
+               data-i18n="hero-subtitle">데이터플랫폼 아키텍트 &nbsp;·&nbsp; 히말라야 트레커</p>
             <h1 class="text-5xl md:text-7xl font-black mb-6 fade-in">
                 <span class="gradient-text">Trendy Ryu</span>
             </h1>
-            <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed fade-in">
-                정상을 향한 집념으로 데이터를 설계하다.<br>
-                <span class="text-sky-300 font-medium">마차푸차레</span>의 장엄함처럼,
-                데이터 위에 새로운 시야를 열다.
-            </p>
+            <p class="text-slate-300 text-lg md:text-xl max-w-2xl mx-auto mb-10 leading-relaxed fade-in"
+               data-i18n="hero-tagline">정상을 향한 집념으로 데이터를 설계하다.<br><span class="text-sky-300 font-medium">마차푸차레</span>의 장엄함처럼, 데이터 위에 새로운 시야를 열다.</p>
             <div class="flex flex-col sm:flex-row gap-4 justify-center fade-in">
                 <a href="#projects"
-                   class="bg-sky-500 hover:bg-sky-400 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-sky-500/40">
-                    프로젝트 보기
-                </a>
+                   class="bg-sky-500 hover:bg-sky-400 text-white px-8 py-3 rounded-xl font-semibold transition-all duration-200 hover:shadow-xl hover:shadow-sky-500/40"
+                   data-i18n="hero-btn-projects">프로젝트 보기</a>
                 <a href="#about"
-                   class="border border-white/25 hover:border-sky-400 text-white hover:text-sky-300 px-8 py-3 rounded-xl font-semibold transition-all duration-200 backdrop-blur-sm">
-                    더 알아보기
-                </a>
+                   class="border border-white/25 hover:border-sky-400 text-white hover:text-sky-300 px-8 py-3 rounded-xl font-semibold transition-all duration-200 backdrop-blur-sm"
+                   data-i18n="hero-btn-about">더 알아보기</a>
             </div>
             <!-- Altitude badge -->
             <div class="mt-12 inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/18 rounded-full px-5 py-2 text-white/65 text-xs font-medium fade-in">
@@ -94,7 +92,7 @@
         <div class="max-w-4xl mx-auto">
             <div class="fade-in mb-8">
                 <p class="text-sky-500 text-xs font-semibold tracking-[0.28em] uppercase mb-2">About Me</p>
-                <h2 class="text-3xl md:text-4xl font-bold">소개</h2>
+                <h2 class="text-3xl md:text-4xl font-bold" data-i18n="about-heading">소개</h2>
             </div>
 
             <div class="grid md:grid-cols-2 gap-14 items-start">
@@ -104,7 +102,6 @@
                         <img src="프로필사진.jpg"
                              alt="Trendy Ryu 프로필 사진"
                              class="w-64 h-80 rounded-3xl object-cover object-center shadow-2xl shadow-sky-300/50">
-                        <!-- gradient ring -->
                         <div class="absolute -inset-2.5 rounded-3xl bg-gradient-to-br from-sky-400 via-violet-400 to-emerald-400 opacity-20 -z-10 blur-sm"></div>
                     </div>
 
@@ -112,50 +109,35 @@
                     <div class="grid grid-cols-3 gap-3 w-64">
                         <div class="trek-stat rounded-2xl p-3 text-center">
                             <p class="text-sky-600 font-black text-xl">5+</p>
-                            <p class="text-slate-500 text-[10px] font-medium leading-tight mt-0.5">히말라야<br>트레킹</p>
+                            <p class="text-slate-500 text-[10px] font-medium leading-tight mt-0.5" data-i18n="about-stat-trek">히말라야<br>트레킹</p>
                         </div>
                         <div class="trek-stat rounded-2xl p-3 text-center">
                             <p class="text-violet-600 font-black text-xl">6,993</p>
-                            <p class="text-slate-500 text-[10px] font-medium leading-tight mt-0.5">마차푸차레<br>(m)</p>
+                            <p class="text-slate-500 text-[10px] font-medium leading-tight mt-0.5" data-i18n="about-stat-mountain">마차푸차레<br>(m)</p>
                         </div>
                         <div class="trek-stat rounded-2xl p-3 text-center">
                             <p class="text-emerald-600 font-black text-2xl">∞</p>
-                            <p class="text-slate-500 text-[10px] font-medium leading-tight mt-0.5">산을 향한<br>열정</p>
+                            <p class="text-slate-500 text-[10px] font-medium leading-tight mt-0.5" data-i18n="about-stat-passion">산을 향한<br>열정</p>
                         </div>
                     </div>
                 </div>
 
                 <!-- Bio -->
                 <div class="fade-in space-y-5 text-slate-600 leading-relaxed">
-                    <p>
-                        안녕하세요! 저는 <span class="text-slate-800 font-semibold">Trendy Ryu</span>입니다.
-                        대규모 데이터 파이프라인과 ML 플랫폼을 설계·운영하는
-                        데이터플랫폼 아키텍트이며, 동시에 열정적인 산악 트레커입니다.
-                    </p>
-                    <p>
-                        네팔 히말라야의
-                        <span class="text-sky-600 font-semibold">마차푸차레(Machapuchare, 6,993m)</span>를 비롯한
-                        안나푸르나 지역 트레킹에서 정상을 향한 집념과 자연의 장엄함을 통해
-                        데이터 아키텍처의 영감을 얻습니다.
-                    </p>
-                    <p>
-                        대학에서
-                        <span class="text-indigo-600 font-semibold">경제학</span>과
-                        <span class="text-violet-600 font-semibold">회계학</span>을 전공하며 쌓은
-                        비즈니스 인사이트로, 데이터가 실질적인 가치를 창출하도록
-                        기술과 비즈니스를 연결합니다. 산을 오르듯,
-                        하나씩 단계를 밟아 복잡한 문제를 해결해 나갑니다.
-                    </p>
+                    <p data-i18n="about-bio-1">안녕하세요! 저는 <span class="text-slate-800 font-semibold">Trendy Ryu</span>입니다. 대규모 데이터 파이프라인과 ML 플랫폼을 설계·운영하는 데이터플랫폼 아키텍트이며, 동시에 열정적인 산악 트레커입니다.</p>
+                    <p data-i18n="about-bio-2">네팔 히말라야의 <span class="text-sky-600 font-semibold">마차푸차레(Machapuchare, 6,993m)</span>를 비롯한 안나푸르나 지역 트레킹에서 정상을 향한 집념과 자연의 장엄함을 통해 데이터 아키텍처의 영감을 얻습니다.</p>
+                    <p data-i18n="about-bio-3">대학에서 <span class="text-indigo-600 font-semibold">경제학</span>과 <span class="text-violet-600 font-semibold">회계학</span>을 전공하며 쌓은 비즈니스 인사이트로, 데이터가 실질적인 가치를 창출하도록 기술과 비즈니스를 연결합니다. 산을 오르듯, 하나씩 단계를 밟아 복잡한 문제를 해결해 나갑니다.</p>
                     <blockquote class="border-l-4 border-sky-400 pl-4 italic text-slate-500 text-sm">
                         "It is not the mountain we conquer, but ourselves."<br>
                         <span class="text-xs not-italic">— Edmund Hillary</span>
                     </blockquote>
                     <div class="flex flex-wrap gap-3 pt-1">
-                        <span class="bg-sky-50 border border-sky-200 text-sky-600 px-3 py-1 rounded-full text-sm font-medium">
-                            <i class="fas fa-mountain mr-1.5"></i>히말라야 트레커
-                        </span>
-                        <span class="bg-indigo-50 border border-indigo-200 text-indigo-600 px-3 py-1 rounded-full text-sm font-medium">경제학 전공</span>
-                        <span class="bg-violet-50 border border-violet-200 text-violet-600 px-3 py-1 rounded-full text-sm font-medium">회계학 전공</span>
+                        <span class="bg-sky-50 border border-sky-200 text-sky-600 px-3 py-1 rounded-full text-sm font-medium"
+                              data-i18n="about-tag-trek"><i class="fas fa-mountain mr-1.5"></i>히말라야 트레커</span>
+                        <span class="bg-indigo-50 border border-indigo-200 text-indigo-600 px-3 py-1 rounded-full text-sm font-medium"
+                              data-i18n="about-tag-econ">경제학 전공</span>
+                        <span class="bg-violet-50 border border-violet-200 text-violet-600 px-3 py-1 rounded-full text-sm font-medium"
+                              data-i18n="about-tag-acc">회계학 전공</span>
                     </div>
                 </div>
             </div>
@@ -177,7 +159,7 @@
         <div class="max-w-5xl mx-auto">
             <div class="fade-in mb-8">
                 <p class="text-violet-500 text-xs font-semibold tracking-[0.28em] uppercase mb-2">Tech Stack</p>
-                <h2 class="text-3xl md:text-4xl font-bold">기술 스택</h2>
+                <h2 class="text-3xl md:text-4xl font-bold" data-i18n="skills-heading">기술 스택</h2>
             </div>
 
             <!-- Skill grid -->
@@ -276,25 +258,21 @@
         <div class="max-w-5xl mx-auto">
             <div class="fade-in mb-8">
                 <p class="text-emerald-600 text-xs font-semibold tracking-[0.28em] uppercase mb-2">Portfolio</p>
-                <h2 class="text-3xl md:text-4xl font-bold">프로젝트</h2>
+                <h2 class="text-3xl md:text-4xl font-bold" data-i18n="projects-heading">프로젝트</h2>
             </div>
 
             <div class="grid md:grid-cols-3 gap-6">
                 <!-- Card 1 -->
                 <div class="project-card fade-in bg-white rounded-2xl overflow-hidden border border-slate-200 hover:border-sky-300 hover:shadow-xl hover:shadow-sky-100">
                     <div class="h-40 bg-gradient-to-br from-sky-500 to-indigo-600 flex items-center justify-center relative overflow-hidden">
-                        <!-- mini mountain silhouette inside card -->
                         <svg class="absolute bottom-0 w-full opacity-20" viewBox="0 0 300 60" xmlns="http://www.w3.org/2000/svg">
                             <path d="M0,60 L40,35 L80,50 L120,20 L150,38 L170,10 L190,38 L220,18 L260,42 L300,28 L300,60 Z" fill="white"/>
                         </svg>
                         <i class="fas fa-stream text-white text-5xl opacity-80 relative z-10"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-slate-800 font-bold text-lg mb-2">실시간 데이터 파이프라인</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">
-                            Kafka와 Spark Streaming을 활용한 대규모 실시간 이벤트 수집·처리 파이프라인.
-                            일 수억 건 처리 및 Databricks Delta Live Tables 기반 운영.
-                        </p>
+                        <h3 class="text-slate-800 font-bold text-lg mb-2" data-i18n="proj1-title">실시간 데이터 파이프라인</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4" data-i18n="proj1-desc">Kafka와 Spark Streaming을 활용한 대규모 실시간 이벤트 수집·처리 파이프라인. 일 수억 건 처리 및 Databricks Delta Live Tables 기반 운영.</p>
                         <div class="flex flex-wrap gap-2 mb-5">
                             <span class="bg-sky-50 text-sky-600 text-xs px-2.5 py-1 rounded-full border border-sky-100 font-medium">Kafka</span>
                             <span class="bg-indigo-50 text-indigo-600 text-xs px-2.5 py-1 rounded-full border border-indigo-100 font-medium">Spark</span>
@@ -315,11 +293,8 @@
                         <i class="fas fa-brain text-white text-5xl opacity-80 relative z-10"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-slate-800 font-bold text-lg mb-2">ML 피처 스토어 플랫폼</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">
-                            Databricks Feature Store 기반 ML 피처 중앙화 플랫폼.
-                            온·오프라인 피처 서빙 파이프라인 설계 및 MLflow 기반 모델 학습 자동화.
-                        </p>
+                        <h3 class="text-slate-800 font-bold text-lg mb-2" data-i18n="proj2-title">ML 피처 스토어 플랫폼</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4" data-i18n="proj2-desc">Databricks Feature Store 기반 ML 피처 중앙화 플랫폼. 온·오프라인 피처 서빙 파이프라인 설계 및 MLflow 기반 모델 학습 자동화.</p>
                         <div class="flex flex-wrap gap-2 mb-5">
                             <span class="bg-sky-50 text-sky-600 text-xs px-2.5 py-1 rounded-full border border-sky-100 font-medium">Databricks</span>
                             <span class="bg-violet-50 text-violet-600 text-xs px-2.5 py-1 rounded-full border border-violet-100 font-medium">Python</span>
@@ -340,11 +315,8 @@
                         <i class="fas fa-shield-alt text-white text-5xl opacity-80 relative z-10"></i>
                     </div>
                     <div class="p-6">
-                        <h3 class="text-slate-800 font-bold text-lg mb-2">데이터 거버넌스 플랫폼</h3>
-                        <p class="text-slate-500 text-sm leading-relaxed mb-4">
-                            dbt와 Unity Catalog를 활용한 데이터 계보 추적 및 품질 관리 플랫폼.
-                            데이터 메시 아키텍처 기반 도메인 거버넌스 체계 수립.
-                        </p>
+                        <h3 class="text-slate-800 font-bold text-lg mb-2" data-i18n="proj3-title">데이터 거버넌스 플랫폼</h3>
+                        <p class="text-slate-500 text-sm leading-relaxed mb-4" data-i18n="proj3-desc">dbt와 Unity Catalog를 활용한 데이터 계보 추적 및 품질 관리 플랫폼. 데이터 메시 아키텍처 기반 도메인 거버넌스 체계 수립.</p>
                         <div class="flex flex-wrap gap-2 mb-5">
                             <span class="bg-sky-50 text-sky-600 text-xs px-2.5 py-1 rounded-full border border-sky-100 font-medium">dbt</span>
                             <span class="bg-violet-50 text-violet-600 text-xs px-2.5 py-1 rounded-full border border-violet-100 font-medium">Unity Catalog</span>
@@ -360,17 +332,10 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         CONTACT  —  dark mountain scene
+         CONTACT
     ══════════════════════════════════════ -->
-    <!-- Mountain peak transition into contact dark bg -->
     <div class="relative overflow-hidden" style="background:white; line-height:0;">
         <svg viewBox="0 0 1440 60" preserveAspectRatio="none" style="display:block;width:100%;height:60px;" xmlns="http://www.w3.org/2000/svg">
-            <defs>
-                <linearGradient id="transG" x1="0" y1="0" x2="0" y2="1">
-                    <stop offset="0%" stop-color="#0f172a" stop-opacity="0"/>
-                    <stop offset="100%" stop-color="#0f172a"/>
-                </linearGradient>
-            </defs>
             <rect width="1440" height="60" fill="#0f172a"/>
             <path d="M0,0 L0,26 L72,14 L144,28 L216,8 L288,24 L360,6 L432,22 L504,4 L576,20 L648,2 L720,18 L792,4 L864,20 L936,4 L1008,20 L1080,8 L1152,24 L1224,8 L1296,26 L1368,10 L1440,26 L1440,0 Z"
                   fill="white"/>
@@ -378,7 +343,6 @@
     </div>
 
     <section id="contact" class="relative py-10 px-6 overflow-hidden" style="background:#0f172a;">
-        <!-- Background mountain silhouette (Machapuchare echo) -->
         <svg class="absolute inset-0 w-full h-full opacity-10" viewBox="0 0 1440 600" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
             <path d="M420,600 C445,550 480,488 520,418 565,340 610,258 652,182 684,120 706,72 720,42 726,28 730,18 734,8 738,22 742,38 748,62 753,44 758,26 763,12 768,28 773,48 778,72 783,55 788,38 793,62 798,82 806,108 820,148 840,198 866,258 898,324 934,396 972,468 1010,536 1040,590 1055,615 1060,600 Z"
                   fill="white"/>
@@ -387,11 +351,8 @@
         <div class="max-w-2xl mx-auto text-center relative z-10">
             <div class="fade-in mb-8">
                 <p class="text-sky-400 text-xs font-semibold tracking-[0.28em] uppercase mb-2">Contact</p>
-                <h2 class="text-3xl md:text-4xl font-bold text-white mb-5">연락하기</h2>
-                <p class="text-slate-400 leading-relaxed">
-                    데이터 플랫폼 구축, 아키텍처 자문, 트레킹 동반자 모집,<br>
-                    또는 협업 제안이 있으시면 언제든지 연락 주세요.
-                </p>
+                <h2 class="text-3xl md:text-4xl font-bold text-white mb-5" data-i18n="contact-heading">연락하기</h2>
+                <p class="text-slate-400 leading-relaxed" data-i18n="contact-desc">데이터 플랫폼 구축, 아키텍처 자문, 트레킹 동반자 모집,<br>또는 협업 제안이 있으시면 언제든지 연락 주세요.</p>
             </div>
 
             <div class="fade-in">
@@ -411,30 +372,25 @@
     </section>
 
     <!-- ══════════════════════════════════════
-         FOOTER  —  mountain silhouette
+         FOOTER
     ══════════════════════════════════════ -->
     <footer style="background:#070d18;">
-        <!-- Footer mountain panorama -->
         <svg viewBox="0 0 1440 80" preserveAspectRatio="none" style="display:block;width:100%;height:80px;" xmlns="http://www.w3.org/2000/svg">
             <rect width="1440" height="80" fill="#070d18"/>
             <path d="M0,80 L0,55 L80,38 L160,58 L240,30 L310,52 L380,22 L440,46 L500,18 L550,42 L598,16 L640,10 L682,16 L720,30 L758,16 L800,10 L842,18 L882,42 L928,18 L970,44 L1030,22 L1090,48 L1150,26 L1210,50 L1280,30 L1350,54 L1420,34 L1440,46 L1440,80 Z"
                   fill="#0f172a"/>
-            <!-- tiny machapuchare echo in footer -->
             <path d="M695,32 L700,22 L706,14 L710,22 L714,32 L712,36 L706,18 L700,36 Z" fill="white" opacity="0.15"/>
         </svg>
 
         <div class="py-6 px-6 text-center text-slate-600 text-sm" style="background:#070d18;">
             <p class="flex items-center justify-center gap-2">
                 <i class="fas fa-mountain text-sky-800 text-xs"></i>
-                © 2026 Trendy Ryu. Data Architect · Himalaya Trekker
+                <span data-i18n="footer-copy">© 2026 Trendy Ryu. 데이터 아키텍트 · 히말라야 트레커</span>
                 <i class="fas fa-mountain text-sky-800 text-xs"></i>
             </p>
         </div>
     </footer>
 
-    <!-- ══════════════════════════════════════
-         JAVASCRIPT
-    ══════════════════════════════════════ -->
     <script src="js/main.js"></script>
 
 </body>
